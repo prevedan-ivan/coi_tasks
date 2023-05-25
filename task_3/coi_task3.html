@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COI - Task 3</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      height: fit-content;
+      padding: 30px;
+      margin: 10% auto;
+      background: #c0bfbf;
+      text-align: center;
+    }
+
+    .container button {
+      padding: 20px 50px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      background: #000;
+      color: #fff;
+    }
+
+    .container button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="find-country">FIND MY COUNTRY!</button>
+    <p>Your country is: <span class="country" style="text-transform: uppercase;"></span></p>
+  </div>
+
+  <script>
+    const findMyCountry = () => {
+      const output = document.querySelector('.country');
+
+      const success = (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&type=country&apiKey=7de4ff0b747c489ca30c7b74c62d6d5d`;
+        const requestOptions = {
+          method: 'GET',
+        };
+
+        fetch(url, requestOptions)
+          .then(response => response.json())
+          .then(data => {
+            const country = data.features[0].properties.country;
+            output.textContent = country;
+            sessionStorage.setItem("country", country);
+          })
+          .catch(error => console.log('error', error));
+      }
+
+      const error = () => {
+        output.textContent = 'Unable to retrieve your location! Please give permission in your browser.';
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error);
+    }
+
+    document.querySelector('.find-country').addEventListener('click', findMyCountry);
+
+  </script>
+</body>
+</html>
