@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COI - Task 1</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      display: flex;
+      background: #E3CFCF;
+      max-width: 1440px;
+      max-height: 576px;
+      margin: 0 auto;
+    }
+
+    .wrapper div {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+
+    .img-wrapper {
+      background-image: url('task1_img.jpg');
+      background-position: top right;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .txt-wrapper div {
+      flex-direction: column;
+      text-align: center;
+      margin: 8% 14%;
+    }
+
+    h3 {
+      text-transform: uppercase;
+    }
+
+    p {
+      opacity: 1;
+      transition: opacity 0.5s linear;
+    }
+
+    button {
+      background-color: transparent;
+      border: 1px solid #000;
+      font-weight: bold;
+      width: 170px;
+      padding: 16px;
+      margin: 24px auto;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      .wrapper {
+        flex-direction: column; 
+        max-height: fit-content;
+      }
+      .img-wrapper {
+        background-size: cover;
+      }
+      .wrapper div {
+        width: 100%;
+      }
+      .img-wrapper {
+        padding-top: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="img-wrapper">
+    </div>
+    <div class="txt-wrapper">
+      <div>
+        <h3>Handcrafted and Responsibly Sourced</h3>
+        <p class="text-to-toggle">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. </p>
+        <button onClick="toggle()">Learn more</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const textToToggle = document.querySelector(".text-to-toggle");
+    function toggle() {
+      if (textToToggle.style.opacity === "0") {
+        textToToggle.style.opacity = "1";
+      } else {
+        textToToggle.style.opacity = "0";
+      }
+    }
+  </script>
+</body>
+</html>
