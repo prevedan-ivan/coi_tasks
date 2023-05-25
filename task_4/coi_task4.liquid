@@ -1,0 +1,89 @@
+
+{% stylesheet %}
+   .feature-cards-wrapper {
+        background: #F5F1EC;
+        padding: 64px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .feature-card {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        text-align: center;
+        padding: 2% 5%;
+    }
+
+    .feature-card img {
+        width: 60px;
+        margin: 10px auto;
+    }
+
+    .feature-card h3 {
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+    .feature-card p {
+        font-size: 1em;
+    }
+    
+    @media screen and (max-width: 440px) {
+        .feature-cards-wrapper {
+            flex-direction: column;
+            padding: 30px;
+        }
+        .feature-card {
+            margin: 10% auto;
+        }
+    }
+{% endstylesheet %}
+
+
+{% for block in section.blocks %}
+    {% if block.settings.icon != blank %}
+
+      <div class="feature-cards-wrapper">
+         <div class="feature-card">
+               <img class="card-icon" {{ block.settings.icon | img_url: 'medium' }}" alt="card icon">
+               <h3>{{ block.settings.title }}</h3>
+               <p>{{ block.settings.text }}</p>
+         </div>
+      </div>
+
+    {% endif %}
+{% endfor %}
+
+
+{% schema %}
+{
+   "name": "Feature Cards",
+   "tag": "div",
+   "class": "feature-cards-wrapper",
+   "max_blocks": 4,
+   "blocks": [{
+      "type": "feature-card",
+      "class": "feature-card"
+      "name": "Feature Card",
+      "settings": [{
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+         },
+         {
+            "type": "title",
+            "id": "title",
+            "label": "Title"
+            "tag": "h3"
+         },
+         {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+            "tag": "p"
+         }
+      ]
+   }]
+}
+{% endschema %}
