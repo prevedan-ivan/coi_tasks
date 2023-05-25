@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>COI - Task 2</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .headline {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .headline button {
+      font-weight: bold;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #000;
+      padding: 0;
+    }
+
+    .headline button:hover {
+      cursor: pointer;
+      border-color: #faae20;
+    }
+
+    .posts {
+      display: flex;
+      margin: 20px 10px 60px 10px;
+    }
+
+    .post {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .graphic-wrapper {
+      display: block;
+      position: relative;
+      height: max-content;
+      margin: 5%;
+    }
+
+    .big-img {
+      position: relative;
+      margin: 8%;
+      width: 80%;
+      height: fit-content;
+      border-radius: 50%; 
+      z-index: 999;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .mini-img {
+      position: absolute;
+      width: 45%;
+      height: fit-content;
+      z-index: 10;
+    }
+
+    .top-right {
+      top: 0;
+      right: 0;
+    }
+
+    .top-left {
+      top: 0;
+      left: 0;
+    }
+
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+    }
+
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+
+    .post-title {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      width: fit-content;
+      margin: auto;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .post:hover .big-img {
+      border-color: #faae20;
+    }
+
+    .post:hover .post-title {
+      border-color: #faae20;
+    }
+    
+    @media screen and (max-width: 440px) {
+      .headline h1 {
+        font-size: 26px;
+      }
+      .headline p {
+        padding: 0 10px;
+      }
+      .posts {
+        flex-direction: column;
+      }
+      .post-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="headline">
+      <h1>OUR RECIPES</h1>
+      <p>Great on its own or as a mixer. Fun cocktail & mocktail recipes to try.</p>
+      <button>VIEW ALL RECIPES</button>
+    </div>
+    <div class="posts">
+      <div class="post">
+        <div class="graphic-wrapper">
+          <img class="mini-img top-left" src="img/bg4.png" alt="background image 1">
+          <img class="big-img" src="img/cocktail1.png" alt="cocktail image 1">
+        </div>
+        <h3 class="post-title">Sparkling Triple Citrus &<br>Mint Mocktail</h3>
+      </div>
+
+      <div class="post">
+        <div class="graphic-wrapper">
+          <img class="mini-img top-right" src="img/bg1.png" alt="background image 3">
+          <img class="big-img" src="img/cocktail2.png" alt="cocktail image 2">
+          <img class="mini-img bottom-left" src="img/bg2.png" alt="background image 2">
+        </div>
+        <h3 class="post-title">Sparkling Triple Citrus &<br>Mint Mocktail</h3>
+      </div>
+
+      <div class="post">
+        <div class="graphic-wrapper">
+          <img class="big-img" src="img/cocktail3.png" alt="cocktail image 3">
+          <img class="mini-img bottom-right" src="img/bg3.png" alt="background image">
+        </div>
+        <h3 class="post-title">Sparkling Triple Citrus &<br>Mint Mocktail</h3>
+      </div>
+    </div>
+  </div>
+
+  <script>
+ 
+  </script>
+</body>
+</html>
