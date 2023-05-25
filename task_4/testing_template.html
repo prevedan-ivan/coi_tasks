@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>COI - Task 2</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .feature-cards-wrapper {
+        background: #F5F1EC;
+        padding: 64px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .feature-card {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        text-align: center;
+        padding: 2% 5%;
+    }
+
+    .feature-card img {
+        width: 60px;
+        margin: 10px auto;
+    }
+
+    .feature-card h3 {
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+    .feature-card p {
+        font-size: 1em;
+    }
+    
+    @media screen and (max-width: 440px) {
+        .feature-cards-wrapper {
+            flex-direction: column;
+            padding: 30px;
+        }
+        .feature-card {
+            margin: 10% auto;
+        }
+    }
+  </style>
+</head>
+<body>
+    <div class="feature-cards-wrapper">
+        <div class="feature-card">
+            <img src="Vector.png">
+            <h3>title</h3>
+            <p>text text text text text text text text text text text text text text text text text text text text </p>
+        </div>
+        <div class="feature-card">
+            <img src="Vector.png">
+            <h3>title</h3>
+            <p>text text text text text text text text text text text text text text text text text text text text </p>
+        </div>
+        <div class="feature-card">
+            <img src="Vector.png">
+            <h3>title</h3>
+            <p>text text text text text text text text text text text text text text text text text text text text </p>
+        </div>
+    </div>
+</body>
+</html>
